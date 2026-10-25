@@ -1,0 +1,127 @@
+/* Базові налаштування */
+body {
+    font-family: 'Onest', sans-serif;
+}
+
+/* Кастомний патерн на фоні сторінки (сітка) */
+.bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: 
+        linear-gradient(to right, rgba(15, 23, 42, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.1) 1px, transparent 1px);
+}
+
+/* Анімований градієнт для тексту */
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #4F46E5, #9333EA, #EC4899, #4F46E5);
+    background-size: 200% auto;
+}
+
+.animated-gradient {
+    animation: textShine 4s linear infinite;
+}
+
+@keyframes textShine {
+    to { background-position: 200% center; }
+}
+
+/* Фон кнопок і плашок */
+.bg-gradient-custom {
+    background: linear-gradient(135deg, #4F46E5 0%, #9333EA 100%);
+    background-size: 200% auto;
+    transition: background-position 0.3s;
+}
+.bg-gradient-custom:hover {
+    background-position: right center;
+}
+
+/* Ефекти світіння кнопок */
+.glow-btn {
+    position: relative;
+}
+.glow-btn::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #4F46E5, #9333EA);
+    filter: blur(8px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.glow-btn:hover::after {
+    opacity: 0.6;
+}
+
+/* Bento картки (переваги) */
+.bento-card {
+    background-color: #FFFFFF;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-card:hover {
+    box-shadow: 0 20px 40px -10px rgba(79, 70, 229, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Анімації Blob (плавні плями на фоні) */
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+    animation: blob 8s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* Плаваючі елементи (віджети) */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes float-delayed {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+    animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float-delayed 6s ease-in-out infinite 1s;
+}
+
+/* Ефект пульсації для блоку "Roadmap" */
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 15px rgba(79, 70, 229, 0.5); }
+    50% { box-shadow: 0 0 30px rgba(79, 70, 229, 0.9); }
+    100% { box-shadow: 0 0 15px rgba(79, 70, 229, 0.5); }
+}
+.glow-pulse {
+    animation: glowPulse 2s infinite;
+}
+
+/* 3D Перспектива для екрану коду */
+.perspective-1000 {
+    perspective: 1000px;
+}
